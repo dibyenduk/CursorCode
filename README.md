@@ -1,6 +1,6 @@
 # Person Location Management Application
 
-A full-stack application for securely storing person names and drop-off locations with encrypted data storage in SQL Server.
+A full-stack application for securely storing person information (first name, last name, phone number, and address details) with encrypted data storage in SQL Server.
 
 ## Architecture
 
@@ -131,8 +131,12 @@ The application automatically creates the following table on first run:
 ```sql
 CREATE TABLE [dbo].[PersonLocation] (
     [Id] INT IDENTITY(1,1) PRIMARY KEY,
-    [EncryptedName] NVARCHAR(MAX) NOT NULL,
-    [EncryptedLocation] NVARCHAR(MAX) NOT NULL,
+    [EncryptedFirstName] NVARCHAR(MAX) NOT NULL,
+    [EncryptedLastName] NVARCHAR(MAX) NOT NULL,
+    [EncryptedPhoneNumber] NVARCHAR(MAX) NOT NULL,
+    [EncryptedStreetName] NVARCHAR(MAX) NOT NULL,
+    [EncryptedCity] NVARCHAR(MAX) NOT NULL,
+    [EncryptedZipCode] NVARCHAR(MAX) NOT NULL,
     [CreatedAt] DATETIME2 DEFAULT GETUTCDATE() NOT NULL
 );
 ```
@@ -166,8 +170,12 @@ CREATE TABLE [dbo].[PersonLocation] (
 **Request**:
 ```json
 {
-  "name": "John Doe",
-  "dropOffLocation": "123 Main Street, City, State 12345"
+  "firstName": "John",
+  "lastName": "Doe",
+  "phoneNumber": "+1-555-123-4567",
+  "streetName": "123 Main Street",
+  "city": "New York",
+  "zipCode": "10001"
 }
 ```
 

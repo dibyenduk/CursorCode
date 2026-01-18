@@ -64,9 +64,13 @@ Frontend runs on: `http://localhost:3000`
 ## Testing
 
 1. Open `http://localhost:3000` in your browser
-2. Fill in:
-   - Person Name: `John Doe`
-   - Drop-off Location: `123 Main St, City, State`
+2. Fill in all fields:
+   - First Name: `John`
+   - Last Name: `Doe`
+   - Phone Number: `+1-555-123-4567`
+   - Street Name: `123 Main St`
+   - City: `New York`
+   - Zip Code: `10001`
 3. Click "Store Information"
 4. Check your SQL Server database - data should be stored in encrypted format in the `PersonLocation` table
 
@@ -78,7 +82,7 @@ The application automatically creates the `PersonLocation` table on first run. V
 SELECT * FROM PersonLocation;
 ```
 
-Note: The `EncryptedName` and `EncryptedLocation` columns contain encrypted data (hex strings).
+Note: All sensitive fields (EncryptedFirstName, EncryptedLastName, EncryptedPhoneNumber, EncryptedStreetName, EncryptedCity, EncryptedZipCode) contain encrypted data (hex strings).
 
 ## Troubleshooting
 

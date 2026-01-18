@@ -203,8 +203,12 @@ Functions in person-location-api-12345:
 4. Enter request body:
    ```json
    {
-     "name": "Test User",
-     "dropOffLocation": "123 Test St, Test City"
+     "firstName": "Test",
+     "lastName": "User",
+     "phoneNumber": "+1-555-987-6543",
+     "streetName": "123 Test St",
+     "city": "Test City",
+     "zipCode": "12345"
    }
    ```
 5. Click "Run"
@@ -215,7 +219,7 @@ Functions in person-location-api-12345:
 ```bash
 curl -X POST https://YOUR-FUNCTION-APP-NAME.azurewebsites.net/api/storePersonLocation \
   -H "Content-Type: application/json" \
-  -d '{"name":"Test User","dropOffLocation":"123 Test St, Test City"}'
+  -d '{"firstName":"Test","lastName":"User","phoneNumber":"+1-555-987-6543","streetName":"123 Test St","city":"Test City","zipCode":"12345"}'
 ```
 
 ## Step 5: Update Frontend to Use Published Backend
