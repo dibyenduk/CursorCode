@@ -1,0 +1,9 @@
+bin
+obj
+appsettings.json
+local.settings.json
+.vs
+.vscode
+*.swp
+*.swo
+*~
