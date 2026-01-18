@@ -8,7 +8,8 @@
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "dependencies": {
-    "mssql": "^10.0.1"
+    "mssql": "^10.0.1",
+    "@azure/identity": "^4.0.1"
   },
   "devDependencies": {
     "azure-functions-core-tools": "^4"
