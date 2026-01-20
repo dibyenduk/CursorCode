@@ -27,6 +27,8 @@ jobs:
         run: |
           npm install
           npm run build --if-present
+        env:
+          REACT_APP_API_URL: ${{ secrets.AZURE_FUNCTION_URL }}
         working-directory: ${{ github.workspace }}/frontend
 
       - name: Upload artifact for deployment job
@@ -64,3 +66,4 @@ jobs:
           package: .
 
           
+
